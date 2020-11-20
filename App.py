@@ -140,11 +140,12 @@ y = ''
 
 if st.button("Clasifica"):
     y = predice_etiquetas_comentario(comentario_input)
-
+    st.markdown('_Las categorías más apropiadas son:_')
+    
 else:
     st.write("En espera")
 
-st.markdown('_Las categorías más apropiadas son:_')
+  
 
 for _, label in enumerate(y):
 
