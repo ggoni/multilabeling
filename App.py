@@ -153,7 +153,7 @@ for _, label in enumerate(y):
 st.subheader('2) Clasificación masiva')
 
 uploaded_file = st.file_uploader(
-    "Elige la planilla que contiene los comentario tal y como la entrega IPSOS", type="xlsx")
+    "Elige la planilla que contiene los comentario tal y como la entrega IPSOS", type="xls")
 
 if uploaded_file:
     df = pd.read_excel(uploaded_file)
