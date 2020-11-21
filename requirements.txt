@@ -4,3 +4,4 @@ streamlit==0.69.2
 sklearn==0.0
 nltk==3.5
 xlrd==1.2.0
+base64
