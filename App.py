@@ -4,6 +4,7 @@ import streamlit as st
 import pickle
 import nltk
 import re
+import base64
 
 
 etiquetas = ['Agilidad', 'Amabilidad/Trato/Disposicion', 'Asesoramiento', 'Caja',
