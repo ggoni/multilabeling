@@ -164,7 +164,7 @@ if uploaded_file:
     df['etiquetas'] = comentarios.apply(predice_etiquetas_comentario)
 
     # Cuando no se indica un archivo, se supone que estaremos enviando un csv
-    csv = df.to_csv(index=False)
+    csv = df.to_csv(index=False,sep='|')
     # Algún trabajo intermedio para codificación
     b64 = base64.b64encode(csv.encode()).decode()
     href = f'<a href="data:file/csv;base64,{b64}">Descarga un archivo CSV con las etiquetas</a> (Botón derecho y&lt;nombre_archivo&gt;.csv)'
