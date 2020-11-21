@@ -140,13 +140,31 @@ y = ''
 
 if st.button("Clasifica"):
     y = predice_etiquetas_comentario(comentario_input)
-    st.markdown('_Las categorías más apropiadas son:_')
-    
+
 else:
     st.write("En espera")
 
-  
+st.markdown('_Las categorías más apropiadas son:_')
 
 for _, label in enumerate(y):
 
     st.markdown('\t\t\t\t\t\t\t\t\t'+'-_' + label + '_')
+
+st.subheader('2) Clasificación masiva')
+
+uploaded_file = st.file_uploader(
+    "Elige la planilla que contiene los comentario tal y como la entrega IPSOS", type="xlsx")
+
+if uploaded_file:
+    df = pd.read_excel(uploaded_file)
+
+    comentarios = df['Cuéntanos, ¿por qué calificas con esa nota la experiencia en Easy?']
+
+    df['etiquetas'] = comentarios.apply(predice_etiquetas_comentario)
+
+    # Cuando no se indica un archivo, se supone que estaremos enviando un csv
+    csv = df.to_csv(index=False)
+    # Algún trabajo intermedio para codificación
+    b64 = base64.b64encode(csv.encode()).decode()
+    href = f'<a href="data:file/csv;base64,{b64}">Descarga un archivo CSV con las etiquetas</a> (Botón derecho y&lt;nombre_archivo&gt;.csv)'
+    st.markdown(href, unsafe_allow_html=True)
