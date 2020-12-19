@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import pickle
-import nltk
+#import nltk
 import re
 import base64
 
