@@ -1,7 +1,8 @@
 pandas==1.0.3
 numpy==1.18.1
 streamlit==0.69.2
-sklearn==0.0
+scikit-image==0.16.2
+scikit-learn==0.22.1
 nltk==3.5
 xlrd==1.2.0
 base64==3.4
