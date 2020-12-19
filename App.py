@@ -6,7 +6,7 @@ import pickle
 #import nltk
 import re
 import base64
-import sklearn
+#import sklearn
 
 
 etiquetas = ['Agilidad', 'Amabilidad/Trato/Disposicion', 'Asesoramiento', 'Caja',
